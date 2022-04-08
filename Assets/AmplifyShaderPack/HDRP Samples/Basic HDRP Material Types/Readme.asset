@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78934177bebe0545ab566bb787b0282, type: 3}
+  m_Name: Readme
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 2800000, guid: 0014f97aef9f1e441ad568371de6785e, type: 3}
+  Title: Basic HDRP Material Types
+  Description:
+    Heading: 
+    Text: This samples shows usage of each of the available types for the Lit material.
+    LinkText: 
+    Url: 
+  PropertiesHeader:
+    Heading: Anisotropy Properties
+    Text: Applies the Unity HDRP anisotropic workflow to the Material. Highlights
+      of Anisotropic surfaces change in appearance as you view the Material from
+      different angles.
+    LinkText: 
+    Url: 
+  Properties:
+  - Heading: Base Color
+    Text: Albedo texture to be applied to surface.
+    LinkText: 
+    Url: 
+  - Heading: Anisotropy Map
+    Text: Anisotropy normals texture to be applied to surface.
+    LinkText: 
+    Url: 
+  - Heading: Anisotropy Strength
+    Text: Anisotropy amount.
+    LinkText: 
+    Url: 
+  - Heading: Tint
+    Text: Albedo color tint value.
+    LinkText: 
+    Url: 
+  AdditionalProperties:
+  - BlockHeader:
+      Heading: Iridescent Properties
+      Text: 'Applies the Unity HDRP Iridescence workflow to the Material. Iridescent
+        surfaces appear to gradually change color as the angle of view or angle of
+        illumination changes. '
+      LinkText: 
+      Url: 
+    BlockContent:
+    - Heading: Smoothness
+      Text: Base smoothness value.
+      LinkText: 
+      Url: 
+    - Heading: Base Color
+      Text: Albedo texture to be applied to surface.
+      LinkText: 
+      Url: 
+    - Heading: Iridescence Thickness
+      Text: Iridescence thickness amount.
+      LinkText: 
+      Url: 
+    - Heading: Iridescent Mask
+      Text: Irredicence strength mask texture.
+      LinkText: 
+      Url: 
+    - Heading: Phong Tess Strength
+      Text: 'Modifies the positions of the subdivided faces so that the resulting
+        surface follows the mesh normals a bit; set to OFF by Default.  '
+      LinkText: 
+      Url: 
+    - Heading: Max Tessellation
+      Text: Maximum Tessellation amount.
+      LinkText: 
+      Url: 
+    - Heading: Tess Min Distance
+      Text: Minimum Tessellation distance value.
+      LinkText: 
+      Url: 
+    - Heading: Tess Max Distance
+      Text: Maximum Tessellation distance value.
+      LinkText: 
+      Url: 
+    - Heading: Edge length
+      Text: Desired edge length in pixels. (controls tessellation factor)
+      LinkText: 
+      Url: 
+    - Heading: Max Displacement
+      Text: Maximum displacement value to be set over tessellation.
+      LinkText: 
+      Url: 
+  - BlockHeader:
+      Heading: Specular Properties
+      Text: Applies the Unity HDRP Specular Color workflow to the Material. Use this
+        Material Type to create Materials with a coloured specular highlight.
+      LinkText: 
+      Url: 
+    BlockContent:
+    - Heading: Base Color
+      Text: 'Albedo color value. '
+      LinkText: 
+      Url: 
+    - Heading: Smoothness
+      Text: Smoothness value.
+      LinkText: 
+      Url: 
+    - Heading: Specular Strength
+      Text: Specular value.
+      LinkText: 
+      Url: 
+    - Heading: Specular
+      Text: Specular color value.
+      LinkText: 
+      Url: 
+  - BlockHeader:
+      Heading: Standard Properties
+      Text: Applies the basic Unity HDRP metallic Shader workflow to the Material.
+        This is the default Material Type.
+      LinkText: 
+      Url: 
+    BlockContent:
+    - Heading: Base Color
+      Text: 'Albedo color value. '
+      LinkText: 
+      Url: 
+    - Heading: Smoothness
+      Text: Smoothness value.
+      LinkText: 
+      Url: 
+    - Heading: Metalicness
+      Text: Metallic value.
+      LinkText: 
+      Url: 
+    - Heading: Phong Tess Strength
+      Text: Modifies the positions of the subdivided faces so that the resulting
+        surface follows the mesh normals a bit; set to OFF by Default.
+      LinkText: 
+      Url: 
+    - Heading: Max Tessellation
+      Text: Maximum Tessellation amount.
+      LinkText: 
+      Url: 
+    - Heading: Tess Min Distance
+      Text: Minimum Tessellation distance value.
+      LinkText: 
+      Url: 
+    - Heading: Tess Max Distance
+      Text: Maximum Tessellation distance value.
+      LinkText: 
+      Url: 
+    - Heading: Edge length
+      Text: Maximum length an edge can have before starting to tessellate.
+      LinkText: 
+      Url: 
+    - Heading: Max Displacement
+      Text: Maximum displacement value to be set over tessellation.
+      LinkText: 
+      Url: 
+  - BlockHeader:
+      Heading: SubsurfaceScattering Properties
+      Text: Applies the Unity HDRP subsurface scattering workflow to the Material.
+        Subsurface scattering simulates the way light interacts with and penetrates
+        translucent objects, such as skin or plant leaves.  Please notice that used
+        diffusion profile MUST be registered over the HDRP asset.
+      LinkText: 
+      Url: 
+    BlockContent:
+    - Heading: Base Color
+      Text: 'Albedo texture to be applied to surface. '
+      LinkText: 
+      Url: 
+    - Heading: Thickness
+      Text: Mesh thickness texture used for SSS calculations.
+      LinkText: 
+      Url: 
+    - Heading: Subsurface Mask
+      Text: SSS strength mask texture.
+      LinkText: 
+      Url: 
+    - Heading: Smoothness
+      Text: Smoothness value.
+      LinkText: 
+      Url: 
+    - Heading: Profile
+      Text: HDRP Diffusion Profile asset used.
+      LinkText: 
+      Url: 
+  AdditionalScripts: []
+  LoadedLayout: 0
+  RPType: 1
