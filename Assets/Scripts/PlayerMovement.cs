@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float _zPos;
     private Vector3 _movementVector;
 
-    void FixedUpdate()
+    void Update()
     {
         _xPos = Input.GetAxis("Horizontal");
         _zPos = Input.GetAxis("Vertical");

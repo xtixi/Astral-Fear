@@ -15,7 +15,7 @@ public class FPSCam : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         _mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
         _mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
