@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78934177bebe0545ab566bb787b0282, type: 3}
+  m_Name: Readme
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 2800000, guid: b98d94bf9a3d1014ea594a9db0c93087, type: 3}
+  Title: Lit Refraction
+  Description:
+    Heading: 
+    Text: Simple refraction with animated normal distortion.
+    LinkText: 
+    Url: 
+  PropertiesHeader:
+    Heading: Properties
+    Text: 
+    LinkText: 
+    Url: 
+  Properties:
+  - Heading: Albedo
+    Text: Base color value.
+    LinkText: 
+    Url: 
+  - Heading: Normal
+    Text: 'Normals texture to be applied to surface. '
+    LinkText: 
+    Url: 
+  - Heading: Thickness
+    Text: Overall thickness of the refractive object, 0 to 1. The thicker the Material,
+      the more visible the effect is.
+    LinkText: 
+    Url: 
+  - Heading: RefractionIndex
+    Text: 'Index of refraction value, or IOR. Higher values produce more intense
+      refraction.  '
+    LinkText: 
+    Url: 
+  - Heading: RefractionDistance
+    Text: 'Thickness of the object at which the Transmittance Color affects incident
+      light at full strength.  '
+    LinkText: 
+    Url: 
+  - Heading: RefractionColor
+    Text: 'Color value used to colorize light passing through.  '
+    LinkText: 
+    Url: 
+  - Heading: Smoothness
+    Text: 'Base smoothness value.  '
+    LinkText: 
+    Url: 
+  - Heading: IridescentThickness
+    Text: 'Iridescent layer thickness value.  '
+    LinkText: 
+    Url: 
+  - Heading: IridescentMask
+    Text: 'Control thickness of the iridescence texture, 0 to 1. This modifies the
+      color of the effect.  '
+    LinkText: 
+    Url: 
+  - Heading: Time Scale
+    Text: Animation speed.
+    LinkText: 
+    Url: 
+  AdditionalProperties: []
+  AdditionalScripts: []
+  LoadedLayout: 0
+  RPType: 1
