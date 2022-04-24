@@ -49,12 +49,14 @@ MonoBehaviour:
     - AloneSoft.VeryAnimation
     - MoreMountains.Tools.TextMeshPro
     - MoreMountains.Feedbacks.NiceVibrations
+    - NavMeshComponents
     - MoreMountains.Tools.Editor
     - AloneSoft.VeryAnimation.Editor
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - MoreMountains.Feedbacks.Editor
     - MoreMountains.Tools.Feedbacks.Editor
     - MoreMountains.NiceVibrations.Editor
+    - NavMeshComponentsEditor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
