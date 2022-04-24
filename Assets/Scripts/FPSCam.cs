@@ -32,8 +32,8 @@ public class FPSCam : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
 
-        //DefineSteps();
-        //Step();
+        DefineSteps();
+        Step();
     }
 
     void Update()
@@ -41,12 +41,12 @@ public class FPSCam : MonoBehaviour
         // Debug.Log("steplock: " + _stepLock);
         //Debug.Log("safestep: " + safeStep);
         Look();
-        /*
+        
         if (safeStep && _stepLock == false)
         {
             Step();
         }
-        */
+        
     }
 
     private void Look()
