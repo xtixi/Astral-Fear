@@ -9,35 +9,28 @@ public class EnemyAI : MonoBehaviour
     // References
     public NavMeshAgent agent;
     public Transform player;
-    //public Transform playerAlly;
     public LayerMask whatIsGround, whatIsPlayer;
 
-    //public GameObject projectile;
-
     //private Health playerHealth;
-    private Animator anim;
-
+    private Animator _anim;
 
     // Patroling
     public Vector3 walkPoint;
-    bool walkPointSet;
+    private bool _walkPointSet;
     public float walkPointRange;
 
     // Attacking
     public float timeBetweenAttacks;
-    bool alreadyAttacked;
+    private bool _alreadyAttacked;
 
     // States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
-    float distanceToPlayer;
-    float distanceToPlayerAlly;
-    bool targetLocked;
 
     void Awake()
     {
-        anim = GetComponentInChildren<Animator>();
+        _anim = GetComponentInChildren<Animator>();
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -45,35 +38,12 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // // Who will enemy attack first? Player or player allies
-        // if (playerInSightRange && !targetLocked && playerAlly != null)
-        // {
-        //     distanceToPlayer = Mathf.Abs(Vector3.Distance(transform.position, player.position));
-        //     distanceToPlayerAlly = Mathf.Abs(Vector3.Distance(transform.position, playerAlly.position));
-        //
-        //     if (distanceToPlayer > distanceToPlayerAlly)
-        //     {
-        //         player = GameObject.Find("PlayerAlly").transform;
-        //         targetLocked = true;
-        //     }
-        //     else
-        //     {
-        //         player = GameObject.Find("Viking_ragnar_v2").transform;
-        //         targetLocked = true;
-        //     }
-        //
-        //
-        //     //float distanceToEnemy = Mathf.Max(distanceToPlayer, distanceToPlayerAlly);
-        //
-        // }
         if (player == null)
         {
             player = GameObject.Find("Player").transform;
         }
 
 
-        //float velocity = agent.velocity.magnitude / agent.speed;
-        //anim.SetFloat("Speed", agent.velocity.magnitude);
         // Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -91,7 +61,7 @@ public class EnemyAI : MonoBehaviour
         if (playerInAttackRange && playerInSightRange)
         {
             AttackPlayer();
-            Debug.Log("Attack player");
+            //Debug.Log("Attack player");
         }
     }
 
@@ -105,20 +75,18 @@ public class EnemyAI : MonoBehaviour
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
-            walkPointSet = true;
+            _walkPointSet = true;
         }
     }
 
     private void Patroling()
     {
-        //vel -= 0.1f;
-        //anim.SetBool("Walk",true);
-        if (!walkPointSet)
+        if (!_walkPointSet)
         {
             SearchWalkPoint();
         }
 
-        if (walkPointSet)
+        if (_walkPointSet)
         {
             agent.SetDestination(walkPoint);
         }
@@ -128,38 +96,36 @@ public class EnemyAI : MonoBehaviour
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
         {
-            walkPointSet = false;
+            _walkPointSet = false;
         }
     }
 
 
     private void ChasePlayer()
     {
-        //anim.SetFloat("Speed", vel, 0.1f, Time.deltaTime);
         agent.SetDestination(player.position);
     }
 
     private void AttackPlayer()
     {
-    
         //Make sure enemy doesnt move
         agent.SetDestination(transform.position);
         transform.LookAt(player);
-    
-        if (!alreadyAttacked)
+
+        if (!_alreadyAttacked)
         {
             //Attack code here
-            anim.SetTrigger("Attack");
+            _anim.SetTrigger("Attack");
 
             // end of attack code
-            alreadyAttacked = true;
+            _alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
 
     private void ResetAttack()
     {
-        alreadyAttacked = false;
+        _alreadyAttacked = false;
     }
 
 
@@ -170,13 +136,4 @@ public class EnemyAI : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
-
-    // void PlayFootstepsEvent(string path)
-    // {
-    //     FMOD.Studio.EventInstance Footsteps = FMODUnity.RuntimeManager.CreateInstance(path);
-    //     //Footsteps.setParameterByName("Material", material);
-    //     Footsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.transform));
-    //     Footsteps.start();
-    //     Footsteps.release();
-    // }
 }
