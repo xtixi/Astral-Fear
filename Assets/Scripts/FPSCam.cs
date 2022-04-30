@@ -41,15 +41,12 @@ public class FPSCam : MonoBehaviour
         // Debug.Log("steplock: " + _stepLock);
         //Debug.Log("safestep: " + safeStep);
         Look();
+        
         if (safeStep && _stepLock == false)
         {
             Step();
         }
-    }
-
-    private void FixedUpdate()
-    {
-        throw new NotImplementedException();
+        
     }
 
     private void Look()
