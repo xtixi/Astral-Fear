@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.Utilities;
+using Sirenix.Utilities.Editor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         Controller.Move(_movementVector.normalized * speed * Time.deltaTime);
         if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
         {
+           
             FPSCam.Instance.safeStep = true;
         }
         else
