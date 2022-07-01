@@ -48,8 +48,8 @@ MonoBehaviour:
     - MoreMountains.NiceVibrations
     - AloneSoft.VeryAnimation
     - MoreMountains.Tools.TextMeshPro
-    - MoreMountains.Feedbacks.NiceVibrations
     - NavMeshComponents
+    - MoreMountains.Feedbacks.NiceVibrations
     - MoreMountains.Tools.Editor
     - AloneSoft.VeryAnimation.Editor
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
